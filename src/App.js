@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSpring, animated } from "react-spring";
 
 function App() {
+  //  const props = useSpring({
+  //   to: [{opacity: 1, color: '#ffaaee'}, {opacity: 0, color: 'rgb(14,26,19)'}],
+  //   from: {opacity: 0, color: 'red'}
+  // })
+  const props = useSpring({
+    to: { opacity: 1, color: "red" },
+    from: { opacity: 0, color: "orange" },
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <animated.h1 style={props}>Testing this out!</animated.h1>
     </div>
   );
 }
